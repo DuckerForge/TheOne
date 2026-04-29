@@ -142,7 +142,8 @@ code {
   font-family: "JetBrains Mono", Menlo, Consolas, monospace;
   font-size: 0.9em;
   color: var(--gold-light);
-  word-break: break-all;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 ul, ol { padding-left: 24px; }
