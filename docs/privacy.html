@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — THE ONE</title>
+  <meta name="description" content="Privacy Policy for THE ONE — the non-custodial Solana jackpot game by DuckerForge.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site">
+      <h1 class="brand">THE ONE</h1>
+      <p class="tagline">Solana Jackpot Game</p>
+      <nav class="top">
+        <a href="index.html">Home</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html" class="active">Privacy Policy</a>
+        <a href="https://github.com/DuckerForge/TheOne">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Privacy Policy</h1>
+      <p class="meta">
+        <strong>THE ONE</strong> — Solana jackpot game<br>
+        <strong>Effective date</strong>: 2026-04-25<br>
+        <strong>Operator</strong>: DuckerForge ("we", "us", "our")
+      </p>
+
+      <p>
+        This Privacy Policy explains what data <strong>THE ONE</strong> (the "App", Android
+        package <code>com.duckerforge.theone</code>) collects, why we collect it, where it
+        is stored, and what choices you have. The App is a non-custodial Solana
+        dApp; we never hold your private keys, your funds, or your personal
+        identity.
+      </p>
+
+      <h2>1. Summary in plain English</h2>
+      <ul>
+        <li>We do <strong>not</strong> ask for your name, email, phone number, address, or any other personal identifier.</li>
+        <li>We identify you only by your <strong>Solana wallet public address</strong>, which is also published on the Solana blockchain and is therefore already public.</li>
+        <li>We store a <strong>device push token</strong> if you grant notification permission, so the App can alert you about jackpot milestones and draw events.</li>
+        <li>We never sell, rent, or share your data with third-party advertisers.</li>
+        <li>All transactions happen on Solana mainnet. Solana is a public ledger.</li>
+      </ul>
+
+      <h2>2. Data we collect</h2>
+
+      <h3>2.1 Wallet address</h3>
+      <p>
+        When you tap <strong>Connect Wallet</strong>, your Solana wallet (Phantom, Solflare,
+        or any Mobile Wallet Adapter compatible wallet) authorizes the App.
+        The App receives your public address (e.g.
+        <code>qXhoL96gkzqe2KFMpVPseEWVzyzVUibw7YcXknUJQ85</code>) and uses it as your
+        unique account identifier.
+      </p>
+
+      <h3>2.2 Push notification token</h3>
+      <p>
+        If you allow notifications on Android, the App registers a Firebase
+        Cloud Messaging (FCM) device token and stores it under your wallet key
+        in our database. This token is only usable to send pushes to your
+        device.
+      </p>
+
+      <h3>2.3 Game activity</h3>
+      <p>Stored against your wallet address:</p>
+      <ul>
+        <li>Number of tickets purchased</li>
+        <li>Points earned (tickets, achievements, chests)</li>
+        <li>Achievement unlock timestamps</li>
+        <li>Daily free-chest usage marker</li>
+        <li>Paid-chest count</li>
+        <li>Solana transaction signatures of your purchases (for anti-cheat)</li>
+      </ul>
+
+      <h3>2.4 On-chain data</h3>
+      <p>
+        All ticket / chest / badge purchases happen on the Solana blockchain.
+        Transaction details (sender, amount, timestamp, recipient) are publicly
+        visible to anyone via any Solana block explorer. We do not control or
+        store this data — Solana does.
+      </p>
+
+      <h3>2.5 Diagnostic logs</h3>
+      <p>
+        Cloud Functions log technical events (errors, function invocations,
+        performance) for stability and abuse prevention. These logs may include
+        your wallet address but no other personal data, and are retained for
+        30 days by Google Cloud Logging defaults.
+      </p>
+
+      <h2>3. What we do NOT collect</h2>
+      <ul>
+        <li>Your real name</li>
+        <li>Your email address</li>
+        <li>Your phone number or contacts</li>
+        <li>Your geographic location, GPS, or IP address (beyond what Google Cloud automatically logs for incoming requests)</li>
+        <li>Your wallet's private key or seed phrase — these never leave your wallet app</li>
+        <li>Browsing history, advertising IDs, or behavioral profiling</li>
+        <li>Camera, microphone, photos, or files</li>
+      </ul>
+
+      <h2>4. How we use your data</h2>
+      <table>
+        <thead>
+          <tr><th>Purpose</th><th>Data used</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Identify your account</td><td>Wallet address</td></tr>
+          <tr><td>Track your rank and points</td><td>Wallet address, game activity</td></tr>
+          <tr><td>Verify on-chain payments (anti-cheat)</td><td>Transaction signatures</td></tr>
+          <tr><td>Send jackpot / draw notifications</td><td>Push token</td></tr>
+          <tr><td>Process the prize draw</td><td>Wallet addresses, points, tickets</td></tr>
+          <tr><td>Improve stability</td><td>Diagnostic logs</td></tr>
+        </tbody>
+      </table>
+      <p>
+        We do <strong>not</strong> use your data for advertising, profiling, marketing
+        analytics, or training machine-learning models.
+      </p>
+
+      <h2>5. Where the data is stored</h2>
+      <ul>
+        <li><strong>Firebase Realtime Database</strong> (Google Cloud, US region) — wallet game state, push tokens, prize pool, leaderboard, draw settings. Project ID: <code>onetreasure-3f3ff</code>.</li>
+        <li><strong>Cloud Functions logs</strong> — Google Cloud Logging, US region.</li>
+        <li><strong>Solana mainnet</strong> — all on-chain transactions; not under our control.</li>
+      </ul>
+      <p>Google Cloud is GDPR-compliant and certified ISO 27001 / SOC 2.</p>
+
+      <h2>6. Data retention</h2>
+      <ul>
+        <li><strong>Per draw cycle</strong>: at the end of each draw, the leaderboard, participant points, ticket counts, processed-transaction markers, and notification flags are reset. Historical winners are preserved.</li>
+        <li><strong>Push tokens</strong>: kept for as long as you keep the App installed and active. Tokens that become invalid (e.g. uninstall, OS revoke) are deleted automatically the next time we attempt to send a push.</li>
+        <li><strong>Diagnostic logs</strong>: 30 days (Google Cloud default) and then purged.</li>
+        <li><strong>On-chain data</strong>: permanent on Solana, outside our control.</li>
+      </ul>
+
+      <h2>7. Your rights and choices</h2>
+      <p>Because we identify you only by a public wallet address, you can exercise most rights yourself, instantly:</p>
+      <ul>
+        <li><strong>Stop using the App</strong>: tap <strong>Disconnect</strong> in the Profile tab. The App immediately signs out and deletes your push token from our database.</li>
+        <li><strong>Revoke notifications</strong>: revoke the notification permission in Android system settings.</li>
+        <li><strong>Delete your participation record</strong>: contact us (see §10) with your wallet address and request removal. We will erase your participant record, push token, and any logged identifiers within 14 days. We cannot remove on-chain transactions.</li>
+        <li><strong>Access your data</strong>: all your data is already visible in-app (leaderboard, profile). Cloud Function logs related to your wallet can be requested via the contact channels in §10.</li>
+      </ul>
+      <p>If you are an EU/EEA resident, you also have the right to lodge a complaint with your national data protection authority.</p>
+
+      <h2>8. Security</h2>
+      <ul>
+        <li>Authentication uses Firebase Custom Tokens issued only after a successful Solana Mobile Wallet Adapter authorization round-trip.</li>
+        <li>All purchase reports go through Cloud Functions that verify the on-chain transaction (sender, amount, recipient) before crediting any points. The client cannot directly write to the participant or pool records — server-side rules forbid it.</li>
+        <li>All transport is HTTPS.</li>
+        <li>We never see, store, or transmit your private key.</li>
+      </ul>
+      <p>No system is perfectly secure. Report suspected vulnerabilities via GitHub issues (see §10).</p>
+
+      <h2>9. Children</h2>
+      <p>
+        THE ONE involves real Solana cryptocurrency and is <strong>not intended for
+        users under 18</strong>. Do not use the App if you are under 18 or under the
+        legal age of majority in your jurisdiction. We do not knowingly collect
+        data from minors; if we discover a minor has used the App, we will
+        delete the related account on request.
+      </p>
+
+      <h2>10. Contact</h2>
+      <p>Privacy questions, deletion requests, takedowns:</p>
+      <ul>
+        <li><strong>GitHub Issues</strong>: <a href="https://github.com/DuckerForge/TheOne/issues">https://github.com/DuckerForge/TheOne/issues</a></li>
+        <li><strong>X / Twitter</strong>: <a href="https://x.com/skrburn">https://x.com/skrburn</a></li>
+        <li><strong>Telegram</strong>: <a href="https://t.me/skrburn">https://t.me/skrburn</a></li>
+      </ul>
+      <p>We aim to respond within 7 business days.</p>
+
+      <h2>11. Changes to this policy</h2>
+      <p>
+        If we change how the App handles data, we will update this document and
+        push a notification through the App's broadcast system. The "Effective
+        date" at the top will reflect the latest version.
+      </p>
+      <p>Older versions of this policy are available in the GitHub commit history of this repository.</p>
+
+      <hr>
+      <p style="text-align:center; color: var(--text-dim); font-size: 14px;">&copy; 2026 DuckerForge. Distributed under the MIT License.</p>
+    </main>
+
+    <footer class="site">
+      &copy; 2026 DuckerForge
+      <br>
+      <a href="index.html">Home</a> ·
+      <a href="terms.html">Terms</a> ·
+      <a href="privacy.html">Privacy</a> ·
+      <a href="https://github.com/DuckerForge/TheOne">Source code</a>
+    </footer>
+  </div>
+</body>
+</html>
